@@ -16,6 +16,7 @@ public class RetrieveImageTask extends AsyncTask<List<String>,Void, List<Bitmap>
     public RetrieveImageTask(Listener listener) {
         this.mListener = listener;
     }
+
     public interface Listener {
         void onImageLoaded(List<Bitmap> bitmap);
         void onError();

@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.1155" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_app_start.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_feed.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_main.xml" value="0.12158054711246201" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/fragment_layout.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/item_splash.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/post_layout.xml" value="0.264" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/recruit_fragment_layout.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>

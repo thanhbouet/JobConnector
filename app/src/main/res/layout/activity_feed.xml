@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="#596873">
         <View
             android:layout_width="80dp"
             android:layout_height="match_parent"/>
@@ -31,19 +32,55 @@
             android:textSize="40sp"
             android:layout_weight="1"/>
     </LinearLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8.25"
+        android:id="@+id/viewPager"/>
 
-    <ListView
-        android:id="@+id/postList"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_below="@+id/logoTitle"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="30sp"
-        android:layout_weight="8.25">
-    </ListView>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_below="@id/postList"
-        android:layout_weight="0.75"/>
+        android:layout_below="@id/viewPager"
+        android:background="#596873"
+        android:layout_weight="0.75"
+        android:orientation="horizontal"
+        android:weightSum="5">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/newsfeed"
+            android:id="@+id/news_feed"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+        <ImageView
+            android:padding="7dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/post"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:id="@+id/post_recruitment"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"/>
+        <ImageView
+            android:padding="5dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/setting"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
 </LinearLayout>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingActivity"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimaryDark">
+        <ImageView
+            android:layout_marginStart="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_baseline_settings_24"
+            android:layout_gravity="center" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Setting"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:padding="10dp"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/home_st"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text=" Home"
+        android:textColor="@color/black"
+        android:background="#E0E6E8"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-smallcaps"
+        app:drawableStartCompat="@drawable/ic_baseline_home_24" />
+    <TextView
+        android:id="@+id/account_st"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text=" Account"
+        android:textColor="@color/black"
+        android:background="#E0E6E8"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-smallcaps"
+        app:drawableStartCompat="@drawable/rank_icon" />
+    <TextView
+        android:id="@+id/privacy_st"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text=" privacy policy"
+        android:textColor="@color/black"
+        android:background="#E0E6E8"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-smallcaps"
+        app:drawableStartCompat="@drawable/ic_baseline_security_24" />
+    <TextView
+        android:id="@+id/about_us"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text=" About US"
+        android:textColor="@color/black"
+        android:background="#E0E6E8"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-smallcaps"
+        app:drawableStartCompat="@drawable/ic_baseline_group_24" />
+    <TextView
+        android:id="@+id/log_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text=" log out"
+        android:textColor="@color/black"
+        android:background="#E0E6E8"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-smallcaps"
+        app:drawableStartCompat="@drawable/ic_baseline_exit_to_app_24" />
+    <TextView
+        android:id="@+id/quit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:text=" quit"
+        android:textColor="@color/black"
+        android:background="#E0E6E8"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-smallcaps"
+        app:drawableStartCompat="@drawable/ic_baseline_remove_circle_outline_24" />
+</LinearLayout>

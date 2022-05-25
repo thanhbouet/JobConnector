@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "682410484543",
+    "project_id": "jobconnector-1a05e",
+    "storage_bucket": "jobconnector-1a05e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682410484543:android:e836fd165dd95368cda98a",
+        "android_client_info": {
+          "package_name": "com.example.jobconnector"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682410484543-hujnis6il0flkuln8oro5it5aqcsh87l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7ysWGKPGyEQ0_7Wz3sJy-AZJM7blZsng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "682410484543-hujnis6il0flkuln8oro5it5aqcsh87l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

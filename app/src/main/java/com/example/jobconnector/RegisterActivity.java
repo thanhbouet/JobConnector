@@ -26,47 +26,57 @@ import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    MaterialEditText userName,password,email,mobile;
+    MaterialEditText userName, password, email, mobile, confirmPassword;
     RadioGroup radioGroup;
     Button register;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        userName = findViewById(R.id.username);
-        password = findViewById(R.id.password);
-        email = findViewById(R.id.email);
-        mobile = findViewById(R.id.mobile);
-        radioGroup = findViewById(R.id.radiogp);
-        register = findViewById(R.id.register);
+
+        mapping();
+
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String txtUsername = userName.getText().toString();
                 String txtPassword = password.getText().toString();
+                String txtConfirmPassword = confirmPassword.getText().toString();
                 String txtEmail = email.getText().toString();
                 String txtMobile = mobile.getText().toString();
+
                 if (TextUtils.isEmpty(txtEmail) || TextUtils.isEmpty(txtPassword)
-                        || TextUtils.isEmpty(txtUsername) || TextUtils.isEmpty(txtMobile)) {
-                    Toast.makeText(RegisterActivity.this,"All fields required",Toast.LENGTH_SHORT).show();
-                }
-                else {
-                    int genderId = radioGroup.getCheckedRadioButtonId();
-                    RadioButton gender_select = radioGroup.findViewById(genderId);
-                    if (gender_select == null) {
-                        Toast.makeText(RegisterActivity.this,"Gender required",Toast.LENGTH_SHORT).show();
+                        || TextUtils.isEmpty(txtUsername) || TextUtils.isEmpty(txtMobile) || TextUtils.isEmpty(txtConfirmPassword)) {
+                    Toast.makeText(RegisterActivity.this, "All fields required", Toast.LENGTH_SHORT).show();
+                } else if (!txtPassword.equals(txtConfirmPassword)) {
+                    Toast.makeText(RegisterActivity.this, "Confirm password is incorrect", Toast.LENGTH_SHORT).show();
+                } else {
+                    int workerId = radioGroup.getCheckedRadioButtonId();
+                    RadioButton worker_select = radioGroup.findViewById(workerId);
+                    if (worker_select == null) {
+                        Toast.makeText(RegisterActivity.this, "Worker required", Toast.LENGTH_SHORT).show();
                     } else {
-                        String selectedGender = gender_select.getText().toString();
-                        registerNewAccount(txtUsername,txtEmail,txtPassword,txtMobile,selectedGender);
+                        String worker = worker_select.getText().toString();
+                        registerNewAccount(txtUsername, txtEmail, txtPassword, txtMobile, worker);
                     }
                 }
-
 
             }
         });
     }
 
-    private void registerNewAccount(String username, String email, String password, String mobile, String gender) {
+    private void mapping() {
+        userName = findViewById(R.id.username);
+        password = findViewById(R.id.password);
+        email = findViewById(R.id.email);
+        mobile = findViewById(R.id.mobile);
+        radioGroup = findViewById(R.id.radioGr);
+        register = findViewById(R.id.register);
+        confirmPassword = findViewById(R.id.ConfirmPassword);
+    }
+
+    private void registerNewAccount(String username, String email, String password, String mobile, String worker) {
         ProgressDialog progressDialog = new ProgressDialog(RegisterActivity.this);
         progressDialog.setCancelable(false);
         progressDialog.setIndeterminate(false);
@@ -78,12 +88,12 @@ public class RegisterActivity extends AppCompatActivity {
             public void onResponse(String response) {
                 if (response.equals("Successfully Registered")) {
                     progressDialog.dismiss();
-                    Toast.makeText(RegisterActivity.this,response,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                     finish();
                 } else {
                     progressDialog.dismiss();
-                    Toast.makeText(RegisterActivity.this,response,Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, response, Toast.LENGTH_SHORT).show();
                     System.out.println(response);
                 }
             }
@@ -91,23 +101,23 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
                 progressDialog.dismiss();
-                Toast.makeText(RegisterActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
                 error.printStackTrace();
             }
         }) {
             @NonNull
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                HashMap<String,String> param = new HashMap<>();
+                HashMap<String, String> param = new HashMap<>();
                 param.put("username", username);
-                param.put("email",email);
-                param.put("password",password);
-                param.put("mobile",mobile);
-                param.put("gender",gender);
+                param.put("email", email);
+                param.put("password", password);
+                param.put("mobile", mobile);
+                param.put("worker", worker);
                 return param;
             }
         };
-        request.setRetryPolicy(new DefaultRetryPolicy(30000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        request.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         MySingleton.getmInstance(RegisterActivity.this).addToRequestQueue(request);
     }
 }

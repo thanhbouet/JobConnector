@@ -48,6 +48,7 @@ public class PostAdapter extends BaseAdapter {
         TextView salary = view.findViewById(R.id.salary);
         TextView location = view.findViewById(R.id.location);
         TextView jobType = view.findViewById(R.id.jobType);
+        TextView companyName = view.findViewById(R.id.company_name);
 
 
         textCaption.setText(post.getCaption());
@@ -56,6 +57,7 @@ public class PostAdapter extends BaseAdapter {
         salary.setText(post.getSalary());
         location.setText(post.getLocation());
         jobType.setText(post.getJobType());
+        companyName.setText(post.getCompanyName());
 
         return view;
     }

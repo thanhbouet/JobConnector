@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegisterActivity">
+    tools:context=".RegisterActivity"
+    tools:ignore="HardcodedText">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -19,6 +22,7 @@
             android:textStyle="bold"
             android:textColor="@color/colorPrimaryDark"
             android:layout_margin="20dp" />
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,6 +34,7 @@
             android:id="@+id/username"
             android:padding="5dp"
             android:textColor="@color/colorPrimaryDark"/>
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,17 +46,7 @@
             android:id="@+id/email"
             android:padding="5dp"
             android:textColor="@color/colorPrimaryDark"/>
-        <com.rengwuxian.materialedittext.MaterialEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            app:met_floatingLabel="normal"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:id="@+id/password"
-            android:padding="5dp"
-            android:textColor="@color/colorPrimaryDark"/>
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,27 +58,68 @@
             android:id="@+id/mobile"
             android:padding="5dp"
             android:textColor="@color/colorPrimaryDark"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            app:met_floatingLabel="normal"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/password"
+            android:padding="5dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Confirm Password"
+            app:met_floatingLabel="normal"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/ConfirmPassword"
+            android:padding="5dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="You are:" />
+
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
             android:orientation="vertical"
-            android:id="@+id/radiogp">
+            android:id="@+id/radioGr">
+
+            <RadioButton
+                android:id="@+id/jobSeeker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:text="Job Seeker"
+                android:textColor="@color/colorPrimaryDark" />
+
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Male"
-                android:id="@+id/male"
+                android:layout_marginStart="15dp"
+                android:text="Employer"
+                android:id="@+id/employer"
                 android:textColor="@color/colorPrimaryDark"
                 android:buttonTint="@color/colorPrimaryDark">
             </RadioButton>
-            <RadioButton
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Female"
-                android:id="@+id/female"
-                android:textColor="@color/colorPrimaryDark"
-                android:buttonTint="@color/colorPrimaryDark">
-            </RadioButton>
+
         </RadioGroup>
         <Button
             android:layout_width="match_parent"
@@ -94,6 +130,7 @@
             android:textColor="@color/white"
             android:layout_margin="20dp"
             android:id="@+id/register"/>
+
     </LinearLayout>
 
 </LinearLayout>

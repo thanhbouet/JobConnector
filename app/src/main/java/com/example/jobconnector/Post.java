@@ -5,13 +5,14 @@ import android.graphics.Bitmap;
 public class Post {
     private int id;
     private String caption;
+    private String companyName;
     private String describle;
     private Bitmap bitmapImg;
     private String salary;
     private String jobType;
     private String location;
 
-    public Post(int id,String caption, String describle, Bitmap bitmapImg, String salary, String jobType, String location) {
+    public Post(int id,String caption, String companyName, String describle, Bitmap bitmapImg, String salary, String jobType, String location) {
         this.id = id;
         this.caption = caption;
         this.describle = describle;
@@ -19,6 +20,7 @@ public class Post {
         this.salary = salary;
         this.jobType = jobType;
         this.location = location;
+        this.companyName = companyName;
     }
 
     public int getId() {
@@ -75,5 +77,13 @@ public class Post {
 
     public void setSalary(String salary) {
         this.salary = salary;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 }

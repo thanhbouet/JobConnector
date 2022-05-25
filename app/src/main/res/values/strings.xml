@@ -92,4 +92,44 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="action_settings">Settings</string>
+    <string-array name="filterCareer">
+        <item>Tất cả ngành nghề</item>
+        <item>Báo chí</item>
+        <item>Bán hàng</item>
+        <item>Bất động sản</item>
+        <item>Cơ khí</item>
+        <item>Dầu khí</item>
+        <item>Dệt may</item>
+        <item>Dược phẩm</item>
+        <item>Giáo dục</item>
+        <item>Hàng hải</item>
+        <item>Hàng không</item>
+        <item>IT</item>
+        <item>Kế toán</item>
+        <item>Marketing</item>
+        <item>Ngân hàng</item>
+        <item>Nhà hàng</item>
+        <item>Quảng cáo</item>
+        <item>Sửa chữa</item>
+        <item>Thời trang</item>
+    </string-array>
+    <string-array name="filterRank">
+        <item>Tất cả cấp bậc</item>
+        <item>Nhân viên</item>
+        <item>Quản lý</item>
+        <item>Thực tập sinh</item>
+        <item>Mới ra trường</item>
+    </string-array>
+    <string-array name="filterAddress">
+        <item>Tất cả địa điểm</item>
+        <item>Hà Nội</item>
+        <item>Hồ Chí Minh</item>
+        <item>Đà Nẵng</item>
+        <item>Bắc Ninh</item>
+    </string-array>
+    <string-array name="filterType">
+        <item>Loại công việc</item>
+        <item>Fulltime</item>
+        <item>Partime</item>
+    </string-array>
 </resources>

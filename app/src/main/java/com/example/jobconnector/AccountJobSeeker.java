@@ -9,11 +9,9 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import static com.example.jobconnector.MainActivity.username;
-
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -34,6 +32,8 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
     public TextView fields;
     public TextView currentPos;
     public TextView update;
+    private LinearLayout messageLayout;
+    private TextView message;
     ImageView avatar;
     String imgURL;
 
@@ -43,6 +43,16 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
         setContentView(R.layout.activity_account_jobseeker);
 
         mapping();
+        Intent intent = getIntent();
+
+        String username = intent.getStringExtra("username");
+        String message_string = intent.getStringExtra("message");
+
+        message.setText(message_string);
+
+        if (username.equals(MainActivity.username)) {
+            messageLayout.setVisibility(View.INVISIBLE);
+        }
 
         getData(username);
 
@@ -62,6 +72,8 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
         currentPos = findViewById(R.id.currentPosition);
         update = findViewById(R.id.update);
         avatar = findViewById(R.id.avatar);
+        messageLayout = findViewById(R.id.message_layout);
+        message = findViewById(R.id.message_field);
     }
 
     public void getData(String username) {

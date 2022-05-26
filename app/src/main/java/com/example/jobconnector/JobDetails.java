@@ -12,7 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -44,6 +46,7 @@ public class JobDetails extends AppCompatActivity implements RetrieveForOne.mLis
     private ImageView imgDetail;
     private String imageURL;
     private String username;
+    private AppCompatButton apply_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +57,25 @@ public class JobDetails extends AppCompatActivity implements RetrieveForOne.mLis
         Bundle bundle = getIntent().getExtras();
         String nameCompany = bundle.getString("nameCompany");
         String nameJob = bundle.getString("nameJob");
+
+        apply_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!MainActivity.worker.equals("Employer")) {
+                    startActivity(new Intent(JobDetails.this,ApplyActivity.class)
+                            .putExtra("getbackCpname",nameCompany)
+                            .putExtra("getbackJbname",nameJob));
+                    finish();
+                } else {
+                    new AlertDialog.Builder(JobDetails.this)
+                            .setTitle("You are Employer")
+                            .setMessage("Only Job Seeker Account can apply to this. Please register a new account to continue!")
+                            .setPositiveButton(android.R.string.yes, null)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+                }
+            }
+        });
         getUserName(nameCompany);
         getData(nameJob, nameCompany);
 
@@ -71,6 +93,7 @@ public class JobDetails extends AppCompatActivity implements RetrieveForOne.mLis
         jobReq_TV = findViewById(R.id.job_req_TV);
         benefit_TV = findViewById(R.id.benefit_TV);
         imgDetail = findViewById(R.id.job_img_detail);
+        apply_btn = findViewById(R.id.apply_btn);
     }
 
     public void getData(String job_name, String company_name) {

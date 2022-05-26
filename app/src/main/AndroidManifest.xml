@@ -13,13 +13,21 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+        <activity
+            android:name=".NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ApplyActivity"
+            android:exported="false" />
+
         <service
             android:name=".MyFirebaseInstanceIDService"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
         <activity
             android:name=".SettingActivity"
             android:exported="false" />

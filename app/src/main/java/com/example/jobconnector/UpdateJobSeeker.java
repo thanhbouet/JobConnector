@@ -176,7 +176,9 @@ public class UpdateJobSeeker extends AppCompatActivity {
                 response -> {
                     if (response.equals("Update successfully")) {
                         Toast.makeText(UpdateJobSeeker.this, response, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateJobSeeker.this, AccountJobSeeker.class));
+                        startActivity(new Intent(UpdateJobSeeker.this, AccountJobSeeker.class)
+                                .putExtra("username",MainActivity.username)
+                                .putExtra("message",""));
                         finish();
                     } else {
                         Toast.makeText(UpdateJobSeeker.this, response, Toast.LENGTH_SHORT).show();

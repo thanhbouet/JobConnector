@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NotificationActivity"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="You have 0 job application"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:gravity="center_vertical"/>
+    <ListView
+        android:id="@+id/list_application"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Back"/>
+
+</LinearLayout>

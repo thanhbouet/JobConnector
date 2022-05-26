@@ -45,7 +45,10 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -71,6 +74,7 @@ public class RecruitFragment extends Fragment {
     private AppCompatButton uploadBtn;
     ContextWrapper contextWrapper;
     ScrollView mainScroll;
+
 
 
     /**
@@ -196,11 +200,7 @@ public class RecruitFragment extends Fragment {
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG,100,byteArrayOutputStream);
         byte[] bytesofimage=byteArrayOutputStream.toByteArray();
-
         encodeImageString = android.util.Base64.encodeToString(bytesofimage, Base64.DEFAULT);
-        if (encodeImageString == null) {
-            System.out.println("oi roi oi");
-        }
     }
 
     private void uploaddatatodb()
@@ -234,7 +234,11 @@ public class RecruitFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
-                Toast.makeText(getActivity(),error.toString(),Toast.LENGTH_LONG).show();
+                if (encodeImageString == null) {
+                    Toast.makeText(getActivity(),"You need to upload something",Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_LONG).show();
+                }
             }
         })
         {
@@ -252,6 +256,21 @@ public class RecruitFragment extends Fragment {
                 map.put("job_req",jobReqFinal);
                 map.put("job_type",jobTypeFinal);
                 map.put("benefit",benefitFinal);
+                if (encodeImageString == null) {
+                    URL url;
+                    InputStream inputStream = null;
+                    try {
+                        url = new URL("http://10.0.2.2/image_storage/images/sample_feed.jpg");
+                        inputStream = url.openStream();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    Bitmap bm = BitmapFactory.decodeStream(inputStream);
+                    ByteArrayOutputStream baos = new ByteArrayOutputStream();
+                    bm.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+                    byte[] b = baos.toByteArray();
+                    encodeImageString = android.util.Base64.encodeToString(b, Base64.DEFAULT);
+                }
                 map.put("upload",encodeImageString);
                 map.put("address",addressFinal);
                 map.put("career",careerFinal);

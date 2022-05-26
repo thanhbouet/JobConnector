@@ -72,7 +72,9 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.account_st:
             {
                 if (worker.equals("Job Seeker")) {
-                    startActivity(new Intent(SettingActivity.this, AccountJobSeeker.class));
+                    startActivity(new Intent(SettingActivity.this, AccountJobSeeker.class)
+                            .putExtra("username",MainActivity.username)
+                            .putExtra("message",""));
                 } else {
                     startActivity(new Intent(SettingActivity.this, AccountEmployer.class).putExtra("employer",MainActivity.username));
                 }

@@ -112,7 +112,7 @@ public class UpdateEmployer extends AppCompatActivity {
                 response -> {
                     if (response.equals("Update successfully")) {
                         Toast.makeText(UpdateEmployer.this, response, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(UpdateEmployer.this, AccountEmployer.class));
+                        startActivity(new Intent(UpdateEmployer.this, AccountEmployer.class).putExtra("employer",MainActivity.username));
                         finish();
                     } else {
                         Toast.makeText(UpdateEmployer.this, response, Toast.LENGTH_SHORT).show();

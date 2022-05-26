@@ -35,6 +35,7 @@ public class AccountEmployer extends AppCompatActivity implements RetrieveForOne
     private TextView update;
     private TextView desc;
     private TextView title_employer;
+    private ImageView notificationIcon;
     ImageView updateIcon;
     ImageView companyAvatar;
     String imgURL;
@@ -56,6 +57,7 @@ public class AccountEmployer extends AppCompatActivity implements RetrieveForOne
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AccountEmployer.this, UpdateEmployer.class));
+                finish();
             }
         });
 
@@ -64,6 +66,11 @@ public class AccountEmployer extends AppCompatActivity implements RetrieveForOne
             updateIcon.setVisibility(View.INVISIBLE);
             update.setVisibility(View.INVISIBLE);
         }
+
+        notificationIcon.setOnClickListener(v -> {
+            startActivity(new Intent(AccountEmployer.this, NotificationActivity.class));
+            finish();
+        });
     }
 
     private void mapping() {
@@ -76,6 +83,7 @@ public class AccountEmployer extends AppCompatActivity implements RetrieveForOne
         companyAvatar = findViewById(R.id.company_avatar);
         title_employer = findViewById(R.id.title_employer);
         updateIcon = findViewById(R.id.update_icon);
+        notificationIcon = findViewById(R.id.notification_img);
     }
 
     public void getData(String username) {

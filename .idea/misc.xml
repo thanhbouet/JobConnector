@@ -8,9 +8,11 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_account_employer.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_account_jobseeker.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_app_start.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_apply.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_feed.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_information_detail.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_notification.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_register.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_search.xml" value="0.264" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_setting.xml" value="0.2" />
@@ -23,6 +25,7 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/item_splash.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/post_layout.xml" value="0.264" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/recruit_fragment_layout.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/recruit_inf.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/row_inf.xml" value="0.25" />
       </map>
     </option>

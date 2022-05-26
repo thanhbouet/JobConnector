@@ -25,7 +25,7 @@ public class WorkActivity extends AppCompatActivity {
     private Button searchButton;
     private Button personalBtn;
     private Button settingBtn;
-    public static String companyName;
+    public static String companyName = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +46,9 @@ public class WorkActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (worker.equals("Job Seeker")) {
-                    startActivity(new Intent(WorkActivity.this, AccountJobSeeker.class));
+                    startActivity(new Intent(WorkActivity.this, AccountJobSeeker.class)
+                            .putExtra("username",MainActivity.username)
+                            .putExtra("message",""));
                 } else {
                     startActivity(new Intent(WorkActivity.this, AccountEmployer.class).putExtra("employer",MainActivity.username));
                 }
@@ -59,7 +61,10 @@ public class WorkActivity extends AppCompatActivity {
                 finish();
             }
         });
-        getCompanyName();
+        if (worker.equals("Employer")) {
+            getCompanyName();
+        }
+
 
     }
     private void getCompanyName() {

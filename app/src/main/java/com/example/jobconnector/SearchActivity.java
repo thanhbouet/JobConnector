@@ -153,7 +153,9 @@ public class SearchActivity extends AppCompatActivity implements RetrieveImageTa
             @Override
             public void onClick(View view) {
                 if (worker.equals("Job Seeker")) {
-                    startActivity(new Intent(SearchActivity.this, AccountJobSeeker.class));
+                    startActivity(new Intent(SearchActivity.this, AccountJobSeeker.class)
+                            .putExtra("username",MainActivity.username)
+                            .putExtra("message",""));
                 } else {
                     startActivity(new Intent(SearchActivity.this, AccountEmployer.class).putExtra("employer",MainActivity.username));
                 }

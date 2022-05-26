@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ApplyActivity">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The recruiter will retrieved your information in this profile"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/review_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Review your profile"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/message_apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/review_btn"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Introduce something about you to recruiter (Limit 1000 characters)" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sent_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message_apply"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="5dp"
+        android:text="Send your profile"
+        android:textColor="@color/white" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/message_apply"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:padding="5dp"
+        android:text="Back"
+        android:textColor="@color/white" />
+
+
+
+</RelativeLayout>

@@ -50,7 +50,7 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
         messageLayout.setVisibility(View.GONE);
         if (message_string != null && !message_string.equals("")) {
             message.setText(message_string);
-            messageLayout.setVisibility(View.INVISIBLE);
+            messageLayout.setVisibility(View.VISIBLE);
             favourite.setVisibility(View.GONE);
             update.setVisibility(View.GONE);
         }
@@ -139,7 +139,7 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
 
     }
     private void fetchImage() {
-        new RetrieveForOne(AccountJobSeeker.this).execute("http://10.0.2.2/image_storage/avatar_storage/job_seeker/" + imgURL);
+        new RetrieveForOne(AccountJobSeeker.this).execute( getString(R.string.domain) + "/image_storage/avatar_storage/job_seeker/" + imgURL);
     }
 
     @Override

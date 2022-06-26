@@ -141,6 +141,43 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:met_floatingLabel="normal" />
 
+            <LinearLayout
+                android:id="@+id/upload_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/descrip"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:weightSum="10"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3.5"
+                    android:gravity="center_vertical"
+                    android:text="Upload Image"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/browseBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="Browse"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/des"
                 android:layout_width="wrap_content"
@@ -169,17 +206,25 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:met_floatingLabel="normal" />
 
+            <ImageView
+                android:id="@+id/jobImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/upload_layout"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/sample_feed" />
+
             <Button
                 android:id="@+id/updateCom"
                 android:layout_width="239dp"
                 android:layout_height="49dp"
-                android:layout_marginTop="28dp"
+                android:layout_below="@+id/jobImage"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="30dp"
                 android:backgroundTint="@color/colorPrimaryDark"
                 android:text="Update"
-                android:layout_below="@+id/descrip"
                 android:textColor="@color/white"
-                android:layout_marginBottom="30dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

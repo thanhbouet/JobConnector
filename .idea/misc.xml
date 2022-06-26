@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/drawable/button_bg.xml" value="0.1175" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.1155" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/drawable/ic_baseline_security_24.xml" value="0.1445" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_about_us.xml" value="0.25" />
@@ -20,6 +21,7 @@
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_search.xml" value="0.264" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_setting.xml" value="0.2" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_update_employer.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_update_job_seeker.xml" value="0.25" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/activity_work.xml" value="0.22760416666666666" />
         <entry key="..\:/Users/ADMIN/AndroidStudioProjects/JobConnector/app/src/main/res/layout/bar_layout.xml" value="0.22760416666666666" />

@@ -207,8 +207,6 @@ public class RecruitFragment extends Fragment {
 
     private void uploaddatatodb()
     {
-
-
         final String jobNameFinal = jobName.getText().toString().trim();
         final String companyNameFinal = companyName.getText().toString().trim();
         final String timeLimitFinal = timeLimit.getText().toString().trim();

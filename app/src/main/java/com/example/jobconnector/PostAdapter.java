@@ -118,9 +118,8 @@ public class PostAdapter extends BaseAdapter {
 
     public String html2text(String html2) {
         String html = html2;
-        html = html.replaceAll("<(.*?)\\>"," ");
-        html = html.replaceAll("<(.*?)\\\n"," ");
-        html = html.replaceFirst("(.*?)\\>", " ");
+        html = html.replaceAll("\\\\n"," ");
+        html = html.replaceAll("\\\\r"," ");
         html = html.replaceAll("&nbsp;"," ");
         html = html.replaceAll("&amp;"," ");
         return html;

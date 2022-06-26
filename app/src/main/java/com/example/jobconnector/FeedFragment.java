@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -51,7 +51,6 @@ public class FeedFragment extends Fragment {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            Toast.makeText(getActivity(),"Adapter is set",Toast.LENGTH_SHORT).show();
             System.out.println("Size of bitmap :" + bitmap.size());
             bitmapList = bitmap;
             for (int i = 0; i < postList.size(); i++) {

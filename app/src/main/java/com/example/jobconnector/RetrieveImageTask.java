@@ -1,5 +1,7 @@
 package com.example.jobconnector;
 
+import android.app.Activity;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -11,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RetrieveImageTask extends AsyncTask<List<String>,Void, List<Bitmap>> {
-    final String STORAGE_IMAGE_URL = "http://10.0.2.2/image_storage/images/";
+    final String STORAGE_IMAGE_URL = BaseApplication.domain + "/image_storage/images/";
 
     public RetrieveImageTask(Listener listener) {
         this.mListener = listener;

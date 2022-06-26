@@ -2,8 +2,10 @@ package com.example.jobconnector;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Application;
 import android.content.ContextWrapper;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import static com.example.jobconnector.MainActivity.username;
@@ -86,7 +88,7 @@ public class RecruitFragment extends Fragment {
 
     Bitmap bitmap;
     String encodeImageString;
-    public final String url = "http://10.0.2.2/image_storage/fileupload.php";
+    public final String url = BaseApplication.domain + "/image_storage/fileupload.php";
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.recruit_fragment_layout, container, false);
@@ -260,7 +262,7 @@ public class RecruitFragment extends Fragment {
                     URL url;
                     InputStream inputStream = null;
                     try {
-                        url = new URL("http://10.0.2.2/image_storage/images/sample_feed.jpg");
+                        url = new URL(getString(R.string.domain) + "/image_storage/images/sample_feed.jpg");
                         inputStream = url.openStream();
                     } catch (IOException e) {
                         e.printStackTrace();

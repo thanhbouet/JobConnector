@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import org.jsoup.Jsoup;
+
 public class feedActivity extends AppCompatActivity implements View.OnClickListener{
 
 
@@ -53,7 +55,10 @@ public class feedActivity extends AppCompatActivity implements View.OnClickListe
         recruitFragment = new RecruitFragment();
 
         viewPagerAdapter.addFragment(feedFragment);
-        viewPagerAdapter.addFragment(recruitFragment);
+        if (MainActivity.worker.equals("Employer")) {
+            viewPagerAdapter.addFragment(recruitFragment);
+        }
+
         viewPager.setAdapter(viewPagerAdapter);
         viewPager.setOffscreenPageLimit(3);
         viewPager.addOnPageChangeListener(onPageChangeListener);
@@ -97,4 +102,6 @@ public class feedActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(new Intent(feedActivity.this, WorkActivity.class));
             finish();
     }
+
+
 }

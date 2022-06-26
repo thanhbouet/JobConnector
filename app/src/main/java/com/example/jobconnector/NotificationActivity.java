@@ -61,7 +61,7 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     public void fetchData() {
-            String url = "http://10.0.2.2/recruitment/recruitList.php";
+            String url = getString(R.string.domain) + "/recruitment/recruitList.php";
             RequestQueue requestQueue = Volley.newRequestQueue(this);
 
             StringRequest request = new StringRequest(Request.Method.POST, url,
@@ -81,6 +81,11 @@ public class NotificationActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         recruitAdapter.notifyDataSetChanged();
+                        if (usernameList.size() < 2) {
+                            title.setText("You have " + usernameList.size() + " job application");
+                        } else {
+                            title.setText("You have " + usernameList.size() + " job applications");
+                        }
                     },
                     error -> Toast.makeText(NotificationActivity.this, error.toString(), Toast.LENGTH_LONG).show()) {
                 @NonNull

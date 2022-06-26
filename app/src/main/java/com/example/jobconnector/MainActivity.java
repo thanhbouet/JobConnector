@@ -18,10 +18,16 @@ import android.widget.Toast;
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.rengwuxian.materialedittext.MaterialEditText;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -81,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         progressDialog.setIndeterminate(false);
         progressDialog.setTitle("Loging In");
         progressDialog.show();
-        String uRl = "http://10.0.2.2/loginregister/login.php";
+        String uRl = getString(R.string.domain) + "/loginregister/login.php";
         StringRequest request = new StringRequest(Request.Method.POST, uRl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -103,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     String[] str = response.substring(16).split("\\|");
                     username = str[0];
                     worker = str[1];
+                    getDataForApplication();
                     startActivity(new Intent(MainActivity.this, WorkActivity.class));
                 } else {
                     progressDialog.dismiss();
@@ -127,5 +134,36 @@ public class MainActivity extends AppCompatActivity {
         };
         request.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         MySingleton.getmInstance(MainActivity.this).addToRequestQueue(request);
+    }
+
+    public void getDataForApplication() {
+        String url = getString(R.string.domain) + "/recruitment/favoriteList.php";
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+
+        StringRequest request = new StringRequest(Request.Method.POST, url,
+                response -> {
+                    try {
+                        JSONArray jsonArray = new JSONArray(response);
+                        for (int i = 0; i < jsonArray.length(); i++) {
+                            JSONObject object = jsonArray.getJSONObject(i);
+                            String jobName = object.getString("jobName");
+                            String companyName = object.getString("companyName");
+                            BaseApplication.favoriteJob.add(jobName+"."+companyName);
+                        }
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                },
+                error -> Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_LONG).show()) {
+            @NonNull
+            @Override
+            protected Map<String, String> getParams() {
+                HashMap<String, String> param = new HashMap<>();
+                param.put("username", username);
+                return param;
+            }
+        };
+
+        requestQueue.add(request);
     }
 }

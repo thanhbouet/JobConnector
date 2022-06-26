@@ -33,10 +33,11 @@
         android:layout_margin="20dp"
         android:padding="10dp"
         android:text=" Home"
+        android:textAllCaps="true"
         android:textColor="@color/black"
         android:background="#E0E6E8"
         android:textSize="25sp"
-        android:fontFamily="sans-serif-smallcaps"
+
         app:drawableStartCompat="@drawable/ic_baseline_home_24" />
     <TextView
         android:id="@+id/account_st"
@@ -44,23 +45,26 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:padding="10dp"
+        android:textAllCaps="true"
         android:text=" Account"
         android:textColor="@color/black"
         android:background="#E0E6E8"
         android:textSize="25sp"
-        android:fontFamily="sans-serif-smallcaps"
         app:drawableStartCompat="@drawable/rank_icon" />
     <TextView
         android:id="@+id/privacy_st"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:textAllCaps="true"
+
         android:padding="10dp"
         android:text=" privacy policy"
         android:textColor="@color/black"
         android:background="#E0E6E8"
+
         android:textSize="25sp"
-        android:fontFamily="sans-serif-smallcaps"
+
         app:drawableStartCompat="@drawable/ic_baseline_security_24" />
     <TextView
         android:id="@+id/about_us"
@@ -68,15 +72,19 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:padding="10dp"
+        android:textAllCaps="true"
+
         android:text=" About US"
         android:textColor="@color/black"
         android:background="#E0E6E8"
         android:textSize="25sp"
-        android:fontFamily="sans-serif-smallcaps"
+
         app:drawableStartCompat="@drawable/ic_baseline_group_24" />
     <TextView
         android:id="@+id/log_out"
         android:layout_width="match_parent"
+        android:textAllCaps="true"
+
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:padding="10dp"
@@ -84,11 +92,13 @@
         android:textColor="@color/black"
         android:background="#E0E6E8"
         android:textSize="25sp"
-        android:fontFamily="sans-serif-smallcaps"
+
         app:drawableStartCompat="@drawable/ic_baseline_exit_to_app_24" />
     <TextView
         android:id="@+id/quit"
         android:layout_width="match_parent"
+        android:textAllCaps="true"
+
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:padding="10dp"
@@ -96,6 +106,6 @@
         android:textColor="@color/black"
         android:background="#E0E6E8"
         android:textSize="25sp"
-        android:fontFamily="sans-serif-smallcaps"
+
         app:drawableStartCompat="@drawable/ic_baseline_remove_circle_outline_24" />
 </LinearLayout>

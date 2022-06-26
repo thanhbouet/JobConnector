@@ -148,7 +148,7 @@ public class FeedFragment extends Fragment {
         finalData = "";
         postList.clear();
         bitmapList.clear();
-        String uRl = "http://10.0.2.2/fetchdata/jobdata.php";
+        String uRl = getString(R.string.domain) + "/fetchdata/jobdata.php";
         StringRequest request = new StringRequest(Request.Method.GET, uRl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {

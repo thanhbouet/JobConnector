@@ -87,7 +87,7 @@ public class AccountEmployer extends AppCompatActivity implements RetrieveForOne
     }
 
     public void getData(String username) {
-        String url = "http://10.0.2.2/loginregister/getInfoEmployer.php";
+        String url = getString(R.string.domain) + "/loginregister/getInfoEmployer.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         ProgressDialog progressDialog = new ProgressDialog(AccountEmployer.this);
         progressDialog.setCancelable(false);
@@ -143,7 +143,7 @@ public class AccountEmployer extends AppCompatActivity implements RetrieveForOne
 
     private void fetchImage() {
 
-        new RetrieveForOne(AccountEmployer.this).execute("http://10.0.2.2/image_storage/avatar_storage/employer/" + imgURL);
+        new RetrieveForOne(AccountEmployer.this).execute( getString(R.string.domain) + "/image_storage/avatar_storage/employer/" + imgURL);
     }
 
     @Override
@@ -155,4 +155,6 @@ public class AccountEmployer extends AppCompatActivity implements RetrieveForOne
     public void onError() {
         Toast.makeText(this,"Error to load profile picture",Toast.LENGTH_SHORT).show();
     }
+
+
 }

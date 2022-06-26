@@ -78,14 +78,15 @@ public class SettingActivity extends AppCompatActivity implements View.OnClickLi
                 } else {
                     startActivity(new Intent(SettingActivity.this, AccountEmployer.class).putExtra("employer",MainActivity.username));
                 }
-                finish();
+
                 break;
             }
             case R.id.privacy_st: {
+                startActivity(new Intent(SettingActivity.this, PrivacyActivity.class));
                 break;
             }
             case R.id.about_us: {
-                System.out.println("");
+                startActivity(new Intent(SettingActivity.this, AboutUsActivity.class));
                 break;
             }
             case R.id.log_out: {

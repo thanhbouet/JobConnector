@@ -170,7 +170,7 @@ public class UpdateJobSeeker extends AppCompatActivity {
     }
 
     private void updatePro(String username, String name, String date, String yearExp, String field, String currentPosi, String gender) {
-        String url = "http://10.0.2.2/loginregister/updateJobSeeker.php";
+        String url = getString(R.string.domain) + "/loginregister/updateJobSeeker.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 response -> {
@@ -206,7 +206,7 @@ public class UpdateJobSeeker extends AppCompatActivity {
     }
 
     private void getData() {
-        String url = "http://10.0.2.2/loginregister/getInfoJobSeeker.php";
+        String url = getString(R.string.domain) + "/loginregister/getInfoJobSeeker.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 response -> {

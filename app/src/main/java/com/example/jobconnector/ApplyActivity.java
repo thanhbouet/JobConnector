@@ -59,7 +59,7 @@ public class ApplyActivity extends AppCompatActivity {
         send.setOnClickListener(v -> applying());
     }
     private void applying() {
-        String url = "http://10.0.2.2/recruitment/apply.php";
+        String url = getString(R.string.domain) + "/recruitment/apply.php";
 
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.POST, url,

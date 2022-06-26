@@ -44,10 +44,10 @@ public class SplashActivity extends AppCompatActivity {
         dotsIndicator = findViewById(R.id.dots_indicator);
         btnNext = findViewById(R.id.nextBtn);
 
-        if (restorePrefData()) {
-            startActivity(new Intent(SplashActivity.this, MainActivity.class));
-            finish();
-        }
+//        if (restorePrefData()) {
+//            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//            finish();
+//        }
         List<SplashItem> splashItems = new ArrayList<>();
         splashItems.add(new SplashItem("Find your Job","Finding your job fast and easily",R.drawable.splash1));
         splashItems.add(new SplashItem("Create your employer account","Within business account, you can share your recruit information and get more CV",R.drawable.splash2));
@@ -94,10 +94,10 @@ public class SplashActivity extends AppCompatActivity {
 
 
 
-    private boolean restorePrefData() {
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs",MODE_PRIVATE);
-        return pref.getBoolean("isIntroOpnend",false);
-    }
+//    private boolean restorePrefData() {
+//        SharedPreferences pref = getApplicationContext().getSharedPreferences("myPrefs",MODE_PRIVATE);
+//        return pref.getBoolean("isIntroOpnend",false);
+//    }
 
     private void savePrefsData() {
 

@@ -68,7 +68,7 @@ public class WorkActivity extends AppCompatActivity {
 
     }
     private void getCompanyName() {
-        String url = "http://10.0.2.2/loginregister/getCompanyName.php";
+        String url = getString(R.string.domain) +  "/loginregister/getCompanyName.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,

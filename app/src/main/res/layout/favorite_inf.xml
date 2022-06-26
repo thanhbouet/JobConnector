@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/list_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/shape_listview">
+        <TextView
+            android:id="@+id/job_inf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="New job"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"/>
+        <TextView
+            android:id="@+id/company_inf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="From company"
+            android:textSize="15sp"
+            android:textColor="@color/black"
+            android:layout_marginHorizontal="10dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Click to view details"
+            android:textSize="15sp"
+            android:textColor="#098FCC"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

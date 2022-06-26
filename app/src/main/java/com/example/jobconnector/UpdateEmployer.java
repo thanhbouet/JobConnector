@@ -68,7 +68,7 @@ public class UpdateEmployer extends AppCompatActivity {
     }
 
     private void getData() {
-        String url = "http://10.0.2.2/loginregister/getInfoEmployer.php";
+        String url = getString(R.string.domain) + "/loginregister/getInfoEmployer.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 response -> {
@@ -106,7 +106,7 @@ public class UpdateEmployer extends AppCompatActivity {
     }
 
     private void updateCom(String username, String name, String company_name, String company_address, String field, String descriptions) {
-        String url = "http://10.0.2.2/loginregister/updateEmployer.php";
+        String url = getString(R.string.domain) + "/loginregister/updateEmployer.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 response -> {

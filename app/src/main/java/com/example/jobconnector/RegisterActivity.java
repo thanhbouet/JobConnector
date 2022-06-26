@@ -82,7 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
         progressDialog.setIndeterminate(false);
         progressDialog.setTitle("Register New Account");
         progressDialog.show();
-        String uRl = "http://10.0.2.2/loginregister/register.php";
+        String uRl = getString(R.string.domain) + "/loginregister/register.php";
         StringRequest request = new StringRequest(Request.Method.POST, uRl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -117,7 +117,7 @@ public class RegisterActivity extends AppCompatActivity {
                 return param;
             }
         };
-        request.setRetryPolicy(new DefaultRetryPolicy(30000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        request.setRetryPolicy(new DefaultRetryPolicy(20000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         MySingleton.getmInstance(RegisterActivity.this).addToRequestQueue(request);
     }
 }

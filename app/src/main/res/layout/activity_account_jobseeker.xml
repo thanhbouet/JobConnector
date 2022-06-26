@@ -112,29 +112,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/notification_img"
+        android:id="@+id/favorite_img"
         android:layout_width="27dp"
         android:layout_height="26dp"
         android:layout_marginStart="346dp"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/notification_icon"
+        app:srcCompat="@drawable/ic_baseline_favorite_24"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="428dp"
-        android:text="Saved"
-        android:textColor="@color/black"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/message_layout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+
 
     <TextView
         android:id="@+id/currentPosition"
@@ -164,9 +152,9 @@
         android:layout_marginStart="58dp"
         android:layout_marginTop="381dp"
         android:text="Update Information"
-        android:textStyle="bold"
-        android:textSize="16sp"
         android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -176,16 +164,17 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13"
         app:layout_constraintVertical_bias="0.644"
         tools:layout_editor_absoluteX="0dp">
 
         <TextView
+            android:layout_marginStart="10dp"
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Message"
             android:textSize="20sp"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView13"
             app:layout_constraintVertical_bias="0.367"

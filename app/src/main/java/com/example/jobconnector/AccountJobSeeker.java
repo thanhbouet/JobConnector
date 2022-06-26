@@ -34,7 +34,7 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
     public TextView update;
     private LinearLayout messageLayout;
     private TextView message;
-    ImageView avatar;
+    ImageView avatar,favourite;
     String imgURL;
 
     @Override
@@ -47,11 +47,12 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
 
         String username = intent.getStringExtra("username");
         String message_string = intent.getStringExtra("message");
-
-        message.setText(message_string);
-
-        if (username.equals(MainActivity.username)) {
+        messageLayout.setVisibility(View.GONE);
+        if (message_string != null && !message_string.equals("")) {
+            message.setText(message_string);
             messageLayout.setVisibility(View.INVISIBLE);
+            favourite.setVisibility(View.GONE);
+            update.setVisibility(View.GONE);
         }
 
         getData(username);
@@ -60,6 +61,13 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AccountJobSeeker.this, UpdateJobSeeker.class));
+            }
+        });
+
+        favourite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(AccountJobSeeker.this, FavoriteActivity.class));
             }
         });
 
@@ -74,10 +82,11 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
         avatar = findViewById(R.id.avatar);
         messageLayout = findViewById(R.id.message_layout);
         message = findViewById(R.id.message_field);
+        favourite = findViewById(R.id.favorite_img);
     }
 
     public void getData(String username) {
-        String url = "http://10.0.2.2/loginregister/getInfoJobSeeker.php";
+        String url = getString(R.string.domain) + "/loginregister/getInfoJobSeeker.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         ProgressDialog progressDialog = new ProgressDialog(AccountJobSeeker.this);
         progressDialog.setCancelable(false);
@@ -142,4 +151,5 @@ public class AccountJobSeeker extends AppCompatActivity implements RetrieveForOn
     public void onError() {
         Toast.makeText(this, "Error on loading image", Toast.LENGTH_SHORT).show();
     }
+
 }

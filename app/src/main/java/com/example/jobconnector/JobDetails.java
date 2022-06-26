@@ -97,7 +97,7 @@ public class JobDetails extends AppCompatActivity implements RetrieveForOne.mLis
     }
 
     public void getData(String job_name, String company_name) {
-        String url = "http://10.0.2.2/information/inforData.php";
+        String url = getString(R.string.domain) + "/information/inforData.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         ProgressDialog progressDialog = new ProgressDialog(JobDetails.this);
         progressDialog.setCancelable(false);
@@ -155,7 +155,7 @@ public class JobDetails extends AppCompatActivity implements RetrieveForOne.mLis
         requestQueue.add(request);
     }
     private void fetchImage() {
-        new RetrieveForOne(JobDetails.this).execute("http://10.0.2.2/image_storage/images/" + imageURL);
+        new RetrieveForOne(JobDetails.this).execute(getString(R.string.domain)+"/image_storage/images/" + imageURL);
     }
 
     @Override
@@ -169,7 +169,7 @@ public class JobDetails extends AppCompatActivity implements RetrieveForOne.mLis
     }
 
     private void getUserName(String companyName) {
-        String url = "http://10.0.2.2/loginregister/getUsername.php";
+        String url = getString(R.string.domain)+ "/loginregister/getUsername.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,

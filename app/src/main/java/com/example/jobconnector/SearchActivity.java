@@ -181,7 +181,7 @@ public class SearchActivity extends AppCompatActivity implements RetrieveImageTa
 
     private void getData(String keyword, String career, String address, String rank, String type) {
         progressBar.setVisibility(View.INVISIBLE);
-        String url = "http://10.0.2.2/information/getData.php";
+        String url = getString(R.string.domain) + "/information/getData.php";
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 response -> {
@@ -195,7 +195,8 @@ public class SearchActivity extends AppCompatActivity implements RetrieveImageTa
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                    new RetrieveImageTask(this).execute(bitmapList);
+                    new
+                            RetrieveImageTask(this).execute(bitmapList);
                     finalData = response;
                 },
                 error -> {
@@ -267,4 +268,6 @@ public class SearchActivity extends AppCompatActivity implements RetrieveImageTa
         startActivity(new Intent(SearchActivity.this, WorkActivity.class));
         finish();
     }
+
+
 }
